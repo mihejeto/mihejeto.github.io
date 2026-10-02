@@ -44,7 +44,8 @@
     display:flex;align-items:center;justify-content:center;letter-spacing:-.03em;
   }
   .brand b{font-size:15px;font-weight:650;letter-spacing:-.01em}
-  nav.links{display:flex;align-items:center;gap:28px}
+  nav.links{display:flex;align-items:center;gap:26px;overflow-x:auto;scrollbar-width:none}
+  nav.links::-webkit-scrollbar{display:none}
   nav.links a{
     text-decoration:none;color:var(--mid);font-size:14.5px;
     padding:4px 0;border-bottom:1px solid transparent;transition:color .15s,border-color .15s;
@@ -56,7 +57,8 @@
     transition:opacity .15s;white-space:nowrap;
   }
   .nav-cta:hover{opacity:.85}
-  @media(max-width:720px){nav.links{display:none}}
+  @media(max-width:860px){nav.links a{font-size:13.5px}nav.links{gap:18px}}
+  @media(max-width:660px){.brand b{display:none}nav.links{gap:16px;justify-content:flex-start;flex:1}}
 
   /* hero */
   .hero{padding:86px 0 70px;border-bottom:1px solid var(--line-soft)}
@@ -149,7 +151,8 @@
     <a class="brand" href="#top"><span class="mark">MI</span><b>Michael Ihejeto</b></a>
     <nav class="links">
       <a href="#approach">Approach</a>
-      <a href="#proof">Proof</a>
+      <a href="demo/dashboard.html">Dashboard</a>
+      <a href="funnel-demo/index.html">Funnel</a>
       <a href="#about">About</a>
       <a href="#terms">Straight talk</a>
     </nav>

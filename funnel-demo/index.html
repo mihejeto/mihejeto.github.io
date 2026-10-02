@@ -15,6 +15,19 @@
   a{color:inherit}
   .wrap{max-width:780px;margin:0 auto;padding:0 26px}
 
+  .sitenav{background:#070a0e;border-bottom:1px solid var(--soft)}
+  .navin{max-width:980px;margin:0 auto;padding:0 26px;height:60px;display:flex;align-items:center;
+         justify-content:space-between;gap:20px}
+  .navin .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);flex-shrink:0}
+  .navin .mark{width:28px;height:28px;border-radius:7px;background:linear-gradient(145deg,var(--gold),#6d5a33);
+        color:#0b0e13;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+  .navin .brand b{font-size:14.5px;font-weight:650}
+  .navin nav{display:flex;gap:24px;overflow-x:auto;scrollbar-width:none}
+  .navin nav::-webkit-scrollbar{display:none}
+  .navin nav a{color:var(--mid);text-decoration:none;font-size:14px;white-space:nowrap;padding-bottom:2px}
+  .navin nav a:hover{color:var(--ink)}
+  .navin nav a.here{color:var(--gold);border-bottom:1px solid var(--gold)}
+  @media(max-width:660px){.navin .brand b{display:none}}
   .demobar{background:#15110a;border-bottom:1px solid #2b2112;color:#d8b26a;font-size:13.5px;padding:10px 0}
   .demobar .wrap{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:980px}
   .demobar b{color:#f0dcb0}
@@ -78,9 +91,20 @@
 </head>
 <body>
 
+<header class="sitenav"><div class="navin">
+  <a class="brand" href="../index.html"><span class="mark">MI</span><b>Michael Ihejeto</b></a>
+  <nav>
+    <a href="../index.html#approach">Approach</a>
+    <a href="../demo/dashboard.html">Dashboard</a>
+    <a href="index.html" class="here">Funnel</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</div></header>
+
 <div class="demobar"><div class="wrap">
   <span><b>Worked example.</b> This is a demonstration funnel — the expert, the offer and the prices are invented.</span>
-  <a href="../index.html">&larr; Michael Ihejeto</a>
+  <span style="color:#8a98a8">Everything below is a real build; only the business is fictional.</span>
 </div></div>
 
 <div class="wrap">
