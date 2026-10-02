@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230b0f14%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%2256%22%20height%3D%2256%22%20rx%3D%2211%22%20fill%3D%22none%22%20stroke%3D%22%23d8b26a%22%20stroke-width%3D%222.5%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2243%22%20font-family%3D%22Helvetica%2CArial%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22700%22%20fill%3D%22%23d8b26a%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%22-1%22%3EMI%3C%2Ftext%3E%3C%2Fsvg%3E">
+<title>Apply — The Family Meeting Blueprint</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{--bg:#070a0e;--panel:#0e131a;--line:#1e2733;--soft:#171f29;
+        --ink:#eef3f8;--mid:#9aa8b8;--dim:#6b7a8c;--gold:#d8b26a;--golddim:#8a7342;--green:#4ec98a}
+  body{margin:0;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.65;
+       font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:620px;margin:0 auto;padding:0 26px 70px}
+  .demobar{background:#15110a;border-bottom:1px solid #2b2112;color:#d8b26a;font-size:13.5px;padding:10px 0}
+  .demobar .inner{max-width:980px;margin:0 auto;padding:0 26px;display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap}
+  .demobar b{color:#f0dcb0}
+  .demobar a{color:#9aa8b8;text-decoration:none}
+
+  .steps{display:flex;gap:10px;align-items:center;font-size:12px;color:var(--dim);
+         letter-spacing:.1em;text-transform:uppercase;padding:34px 0 0;font-weight:600}
+  .steps i{font-style:normal}
+  .steps .on{color:var(--gold)}
+  .steps span{opacity:.4}
+
+  h1{font-size:30px;letter-spacing:-.025em;line-height:1.2;margin:18px 0 12px;font-weight:700}
+  .sub{color:var(--mid);margin:0 0 30px}
+
+  label{display:block;font-size:14.5px;font-weight:600;margin:0 0 7px;color:var(--ink)}
+  .hint{display:block;font-weight:400;color:var(--dim);font-size:13.5px;margin-top:3px}
+  input,select,textarea{
+    width:100%;background:#0b1016;border:1px solid var(--line);border-radius:9px;
+    color:var(--ink);font:inherit;font-size:16px;padding:12px 14px;margin:0 0 20px;outline:none;
+  }
+  input:focus,select:focus,textarea:focus{border-color:var(--golddim)}
+  textarea{min-height:96px;resize:vertical}
+  select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#6b7a8c 50%),linear-gradient(135deg,#6b7a8c 50%,transparent 50%);
+         background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+  .req{color:var(--gold)}
+  button{
+    width:100%;background:var(--gold);color:#0b0e13;border:0;border-radius:9px;
+    font:inherit;font-size:16.5px;font-weight:650;padding:15px;cursor:pointer;transition:opacity .15s
+  }
+  button:hover{opacity:.92}
+  .small{color:var(--dim);font-size:13.5px;margin:16px 0 0}
+
+  .ref{background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--gold);
+       border-radius:0 10px 10px 0;padding:16px 18px;margin:0 0 26px;font-size:14px;color:var(--mid)}
+  .ref code{color:var(--gold);font-family:ui-monospace,Menlo,monospace;font-size:14.5px}
+</style>
+</head>
+<body>
+
+<div class="demobar"><div class="inner">
+  <span><b>Worked example.</b> Nothing is submitted anywhere — the reference is generated in your browser.</span>
+  <a href="../index.html">&larr; Michael Ihejeto</a>
+</div></div>
+
+<div class="wrap">
+
+  <div class="steps"><i class="on">1 Apply</i><span>&rarr;</span><i>2 Choose a time</i><span>&rarr;</span><i>3 Confirmed</i></div>
+
+  <h1>Two minutes, then you'll pick a time.</h1>
+  <p class="sub">
+    So that the workshop is actually useful to you, and so you're not paying for something that was never going
+    to help. Everything you write here is read before the session.
+  </p>
+
+  <div class="ref">
+    Your reference for this application is <code id="refout">generating…</code> — it travels with you to the next
+    step and onto the booking, which is how your place is matched to you.
+  </div>
+
+  <form id="f" autocomplete="on">
+    <label>Your name <span class="req">*</span></label>
+    <input name="name" required placeholder="First and last">
+
+    <label>Email <span class="req">*</span>
+      <span class="hint">Where the joining link goes.</span></label>
+    <input type="email" name="email" required placeholder="you@example.com">
+
+    <label>Who are you worried about? <span class="req">*</span></label>
+    <select name="who" required>
+      <option value="">Choose one…</option>
+      <option>My mother</option>
+      <option>My father</option>
+      <option>Both parents</option>
+      <option>Another relative</option>
+    </select>
+
+    <label>Where are things right now? <span class="req">*</span></label>
+    <select name="stage" required>
+      <option value="">Choose one…</option>
+      <option>Nothing has been said out loud yet</option>
+      <option>We've talked, and it went badly</option>
+      <option>My siblings and I disagree</option>
+      <option>Something has already happened — a fall, a bill, an incident</option>
+    </select>
+
+    <label>What's the one thing you'd want answered on the night?
+      <span class="hint">A sentence is plenty. This is the part that gets read closely.</span></label>
+    <textarea name="q" placeholder="e.g. How do I raise the driving without her shutting down completely"></textarea>
+
+    <button type="submit">Continue to choose a time &rarr;</button>
+    <p class="small">
+      No payment is taken yet. You'll pick a slot on the next screen, and only then be sent the payment link.
+    </p>
+  </form>
+
+</div>
+
+<script>
+  // A reference is minted at the moment of application — not at booking, not at payment.
+  // In a live build this is also written to the partner's lead sheet before the hand-off.
+  function mintRef(){
+    var c = "0123456789ABCDEF", s = "";
+    for (var i = 0; i < 6; i++) s += c[Math.floor(Math.random() * 16)];
+    return "L-" + s;
+  }
+  var params = new URLSearchParams(location.search);
+  var ref = params.get("ref") || mintRef();
+  var src = params.get("src") || "direct";
+  document.getElementById("refout").textContent = ref;
+
+  document.getElementById("f").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var d = new FormData(e.target);
+    var q = new URLSearchParams({
+      ref: ref,
+      src: src,
+      name: d.get("name") || "",
+      email: d.get("email") || ""
+    });
+    location.href = "booked.html?" + q.toString();
+  });
+</script>
+</body>
+</html>

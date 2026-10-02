@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230b0f14%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%2256%22%20height%3D%2256%22%20rx%3D%2211%22%20fill%3D%22none%22%20stroke%3D%22%23d8b26a%22%20stroke-width%3D%222.5%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2243%22%20font-family%3D%22Helvetica%2CArial%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22700%22%20fill%3D%22%23d8b26a%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%22-1%22%3EMI%3C%2Ftext%3E%3C%2Fsvg%3E">
+<title>The Family Meeting Blueprint — a worked funnel example</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{--bg:#070a0e;--panel:#0e131a;--panel2:#121922;--line:#1e2733;--soft:#171f29;
+        --ink:#eef3f8;--mid:#9aa8b8;--dim:#6b7a8c;--gold:#d8b26a;--golddim:#8a7342;--green:#4ec98a}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.68;
+       font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:780px;margin:0 auto;padding:0 26px}
+
+  .demobar{background:#15110a;border-bottom:1px solid #2b2112;color:#d8b26a;font-size:13.5px;padding:10px 0}
+  .demobar .wrap{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:980px}
+  .demobar b{color:#f0dcb0}
+  .demobar a{color:#9aa8b8;text-decoration:none;white-space:nowrap}
+  .demobar a:hover{color:#eef3f8}
+
+  .pill{display:inline-block;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+        color:var(--gold);font-weight:700;margin:0 0 20px}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.03em;margin:0 0 20px;font-weight:700}
+  .sub{font-size:19.5px;color:var(--mid);margin:0 0 30px}
+  p{color:var(--mid);margin:0 0 17px}
+  strong{color:var(--ink);font-weight:650}
+  section{padding:54px 0;border-top:1px solid var(--soft)}
+  h2{font-size:clamp(22px,3.2vw,28px);letter-spacing:-.02em;margin:0 0 20px;font-weight:650;line-height:1.25}
+  .kicker{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);font-weight:600;margin:0 0 12px}
+
+  .video{position:relative;border:1px solid var(--line);border-radius:12px;background:
+    linear-gradient(135deg,#131a24,#0b1017);aspect-ratio:16/9;display:flex;align-items:center;
+    justify-content:center;flex-direction:column;gap:12px;margin:0 0 30px;text-align:center;padding:20px}
+  .play{width:62px;height:62px;border-radius:50%;border:1.5px solid var(--golddim);display:flex;
+        align-items:center;justify-content:center;color:var(--gold);font-size:19px}
+  .video span{color:var(--dim);font-size:14px;max-width:34em}
+
+  ul.get{list-style:none;padding:0;margin:0}
+  ul.get li{position:relative;padding:12px 0 12px 32px;border-bottom:1px solid var(--soft);color:var(--mid)}
+  ul.get li::before{content:"";position:absolute;left:6px;top:21px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  ul.get li b{color:var(--ink);font-weight:650}
+
+  .price{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:28px;margin-top:30px;text-align:center}
+  .price .amt{font-size:46px;font-weight:700;letter-spacing:-.03em;margin:0;line-height:1.1}
+  .price .amt small{font-size:16px;color:var(--dim);font-weight:400;letter-spacing:0}
+  .price .when{color:var(--dim);font-size:15px;margin:8px 0 22px}
+  .btn{display:inline-block;text-decoration:none;font-size:16.5px;font-weight:650;padding:15px 34px;
+       border-radius:9px;background:var(--gold);color:#0b0e13;transition:transform .12s,opacity .15s}
+  .btn:hover{transform:translateY(-1px);opacity:.92}
+  .btn-wide{display:block;text-align:center}
+  .reassure{color:var(--dim);font-size:14px;margin:16px 0 0}
+
+  .who{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+  @media(max-width:620px){.who{grid-template-columns:1fr}}
+  .box{background:var(--panel);border:1px solid var(--soft);border-radius:11px;padding:20px 22px}
+  .box h3{margin:0 0 10px;font-size:15px;font-weight:650;letter-spacing:.01em}
+  .box ul{margin:0;padding-left:18px;color:var(--mid);font-size:15px}
+  .box li{margin-bottom:7px}
+  .yes h3{color:var(--green)} .no h3{color:#c98a8a}
+
+  .host{display:flex;gap:22px;align-items:flex-start}
+  .host .av{width:92px;height:92px;border-radius:11px;flex-shrink:0;background:linear-gradient(145deg,#1d2733,#121922);
+            border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:12px}
+  @media(max-width:560px){.host{flex-direction:column}}
+
+  details{border-bottom:1px solid var(--soft);padding:15px 0}
+  summary{cursor:pointer;font-weight:600;color:var(--ink);list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+ ";color:var(--gold);font-weight:700}
+  details[open] summary::before{content:"– "}
+  details p{margin:12px 0 0;font-size:15.5px}
+
+  footer{padding:36px 0 70px;color:#4e5c6d;font-size:13.5px;border-top:1px solid var(--soft)}
+</style>
+</head>
+<body>
+
+<div class="demobar"><div class="wrap">
+  <span><b>Worked example.</b> This is a demonstration funnel — the expert, the offer and the prices are invented.</span>
+  <a href="../index.html">&larr; Michael Ihejeto</a>
+</div></div>
+
+<div class="wrap">
+
+  <div style="padding:60px 0 0">
+    <span class="pill">Live workshop · Thursday 16 October</span>
+    <h1>Your parent needs more help than they'll admit. The family meeting is where it goes wrong.</h1>
+    <p class="sub">
+      A two-hour workshop for adult children who can see what's coming and can't get their family to agree on anything —
+      run by a care manager who has sat in four hundred of these conversations.
+    </p>
+
+    <div class="video">
+      <div class="play">&#9654;</div>
+      <span>Where the sales video sits — the expert, to camera, 4 to 6 minutes. Never posted publicly; it only exists on this page.</span>
+    </div>
+
+    <a class="btn btn-wide" href="apply.html">Apply for a place &rarr;</a>
+    <p class="reassure" style="text-align:center">24 places · $97 · recording included if you can't attend live</p>
+  </div>
+
+  <section>
+    <p class="kicker">What you'll walk out with</p>
+    <h2>A script, an order of play, and the two sentences that stop the argument.</h2>
+    <ul class="get">
+      <li><b>The agenda that keeps it from becoming a fight.</b> What to raise first, what to leave until last, and the one topic to keep out of the room entirely the first time.</li>
+      <li><b>How to open when one sibling thinks nothing is wrong.</b> Word for word, including what to do when they say "Mum's fine, you're overreacting."</li>
+      <li><b>The questions that get an honest answer from a parent</b> who has spent two years telling everyone they're managing.</li>
+      <li><b>What to do about the keys, the stove and the stairs</b> — the three flashpoints, and in what order to take them on.</li>
+      <li><b>A written plan at the end of the meeting</b> that everyone has agreed to, so nobody relitigates it in six weeks.</li>
+      <li><b>Live Q&amp;A on your actual family.</b> Bring the situation you're stuck in.</li>
+    </ul>
+
+    <div class="price">
+      <p class="amt">$97 <small>per household</small></p>
+      <p class="when">Thursday 16 October, 7:00–9:00pm ET · online</p>
+      <a class="btn" href="apply.html">Apply for a place</a>
+      <p class="reassure">Applications are read individually. If it isn't right for your situation you'll be told so, and not charged.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="kicker">Honestly</p>
+    <h2>Who this is for, and who it isn't.</h2>
+    <div class="who">
+      <div class="box yes">
+        <h3>This is for you if</h3>
+        <ul>
+          <li>You've noticed changes and nobody else wants to name them</li>
+          <li>There are siblings, and they disagree</li>
+          <li>Your parent still has capacity and a strong opinion</li>
+          <li>You've been putting the conversation off for months</li>
+        </ul>
+      </div>
+      <div class="box no">
+        <h3>This isn't for you if</h3>
+        <ul>
+          <li>There's an emergency happening this week — call us instead</li>
+          <li>Capacity has already been lost and decisions are legal now</li>
+          <li>You're looking for a list of facilities</li>
+          <li>You want someone to make the decision for you</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="kicker">Who's running it</p>
+    <div class="host">
+      <div class="av">photo</div>
+      <div>
+        <h2 style="margin-bottom:12px">Nineteen years, four hundred families.</h2>
+        <p>
+          A certified aging life care manager who has spent nineteen years being called in after the family meeting
+          went badly. This workshop is the conversation she wishes every family had six months earlier.
+        </p>
+        <p style="margin:0">
+          She works with twelve families at a time, so she can't take every call. This is the way to get the same
+          thinking without the waiting list.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="kicker">Questions</p>
+    <h2>Before you apply.</h2>
+    <details><summary>Can my brother or sister attend too?</summary>
+      <p>Yes — one price per household, bring whoever needs to be in the room. In fact it works better when the sibling who disagrees is there.</p></details>
+    <details><summary>What if I can't make the live session?</summary>
+      <p>You get the recording and the written materials. But the live Q&amp;A is where most people get their actual answer, so come if you can.</p></details>
+    <details><summary>Is this going to turn into a sales pitch?</summary>
+      <p>No. If you want to work together afterwards that conversation is available, but the workshop is the thing you paid for and it stands on its own.</p></details>
+    <details><summary>Why is there an application instead of a buy button?</summary>
+      <p>Because this doesn't suit everybody, and 24 places go quickly. Two minutes of questions means nobody pays for something that was never going to help them.</p></details>
+  </section>
+
+  <section style="border-bottom:none">
+    <h2>Thursday 16 October, 7:00pm ET.</h2>
+    <p>Twenty-four places. Applications close when they're gone.</p>
+    <a class="btn" href="apply.html">Apply for a place &rarr;</a>
+  </section>
+
+  <footer>
+    Demonstration funnel built by Michael Ihejeto &middot; <a href="../index.html">mihejeto.github.io</a>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%230b0f14%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%2256%22%20height%3D%2256%22%20rx%3D%2211%22%20fill%3D%22none%22%20stroke%3D%22%23d8b26a%22%20stroke-width%3D%222.5%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2243%22%20font-family%3D%22Helvetica%2CArial%2Csans-serif%22%20font-size%3D%2227%22%20font-weight%3D%22700%22%20fill%3D%22%23d8b26a%22%20text-anchor%3D%22middle%22%20letter-spacing%3D%22-1%22%3EMI%3C%2Ftext%3E%3C%2Fsvg%3E">
+<title>You're on the list — The Family Meeting Blueprint</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  :root{--bg:#070a0e;--panel:#0e131a;--line:#1e2733;--soft:#171f29;
+        --ink:#eef3f8;--mid:#9aa8b8;--dim:#6b7a8c;--gold:#d8b26a;--golddim:#8a7342;--green:#4ec98a}
+  body{margin:0;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.66;
+       font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:640px;margin:0 auto;padding:0 26px 70px}
+  .demobar{background:#15110a;border-bottom:1px solid #2b2112;color:#d8b26a;font-size:13.5px;padding:10px 0}
+  .demobar .inner{max-width:980px;margin:0 auto;padding:0 26px;display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap}
+  .demobar b{color:#f0dcb0}
+  .demobar a{color:#9aa8b8;text-decoration:none}
+
+  .steps{display:flex;gap:10px;align-items:center;font-size:12px;color:var(--dim);
+         letter-spacing:.1em;text-transform:uppercase;padding:34px 0 0;font-weight:600}
+  .steps i{font-style:normal}.steps .on{color:var(--gold)}.steps span{opacity:.4}
+  .tick{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--green);color:var(--green);
+        display:flex;align-items:center;justify-content:center;font-size:23px;margin:26px 0 18px}
+  h1{font-size:30px;letter-spacing:-.025em;line-height:1.2;margin:0 0 14px;font-weight:700}
+  p{color:var(--mid);margin:0 0 17px}
+  strong{color:var(--ink);font-weight:650}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:26px 0}
+  .row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--soft);font-size:15.5px}
+  .row:last-child{border-bottom:none}
+  .row span:first-child{color:var(--dim)}
+  .row code{color:var(--gold);font-family:ui-monospace,Menlo,monospace}
+
+  .btn{display:block;text-align:center;text-decoration:none;font-size:16.5px;font-weight:650;
+       padding:15px;border-radius:9px;background:var(--gold);color:#0b0e13;margin:26px 0 0}
+  ol{color:var(--mid);padding-left:20px}
+  ol li{margin-bottom:10px}
+  .note{background:#15110a;border:1px solid #2b2112;border-radius:11px;padding:18px 20px;margin:34px 0 0;color:#bda97f;font-size:14.5px;line-height:1.6}
+  .note code{color:#d8b26a;font-family:ui-monospace,Menlo,monospace}
+  .note b{color:#f0dcb0}
+  footer{padding:34px 0 0;color:#4e5c6d;font-size:13.5px;border-top:1px solid var(--soft);margin-top:36px}
+</style>
+</head>
+<body>
+
+<div class="demobar"><div class="inner">
+  <span><b>Worked example.</b> No booking has been made and no data left your browser.</span>
+  <a href="../index.html">&larr; Michael Ihejeto</a>
+</div></div>
+
+<div class="wrap">
+
+  <div class="steps"><i>1 Apply</i><span>&rarr;</span><i class="on">2 Choose a time</i><span>&rarr;</span><i>3 Confirmed</i></div>
+
+  <div class="tick">&#10003;</div>
+  <h1 id="hello">Your application is in.</h1>
+  <p>
+    Last step — pick the slot that suits you. Your reference is already attached, so you won't be asked
+    any of that again.
+  </p>
+
+  <div class="card">
+    <div class="row"><span>Reference</span><code id="ref">—</code></div>
+    <div class="row"><span>Name</span><span id="nm">—</span></div>
+    <div class="row"><span>Email</span><span id="em">—</span></div>
+    <div class="row"><span>Came from</span><span id="src">—</span></div>
+    <div class="row"><span>Workshop</span><span>Thu 16 Oct, 7:00pm ET</span></div>
+  </div>
+
+  <a class="btn" id="book" href="#">Choose your time &rarr;</a>
+
+  <h2 style="font-size:19px;margin:40px 0 14px;letter-spacing:-.01em">What happens next</h2>
+  <ol>
+    <li>You pick a slot and get a calendar invite straight away.</li>
+    <li>Your application is read, and the payment link follows by email the same day.</li>
+    <li>If the workshop isn't right for your situation, you'll be told that instead — and not charged.</li>
+  </ol>
+
+  <div class="note">
+    <b>What this page is really showing.</b> The reference minted on the previous screen has travelled
+    through the hand-off and is appended to the booking link below as <code>?reference-code=</code>.
+    That is the whole attribution mechanism: the lead is recorded by the funnel owner <em>before</em>
+    the expert's calendar ever sees them, so a sale can never be reclassified later as "someone I already knew".
+  </div>
+
+  <footer>Demonstration funnel built by Michael Ihejeto &middot; <a href="../index.html">mihejeto.github.io</a></footer>
+</div>
+
+<script>
+  var p = new URLSearchParams(location.search);
+  var ref = p.get("ref") || "L-000000";
+  var nm = p.get("name") || "—";
+  var em = p.get("email") || "—";
+  var src = p.get("src") || "direct";
+
+  document.getElementById("ref").textContent = ref;
+  document.getElementById("nm").textContent = nm;
+  document.getElementById("em").textContent = em;
+  document.getElementById("src").textContent = src;
+  if (nm !== "—") {
+    document.getElementById("hello").textContent = nm.split(" ")[0] + ", your application is in.";
+  }
+
+  // In a live build this points at the EXPERT's calendar, not ours — they take the call.
+  document.getElementById("book").href =
+    "https://cal.com/mihejeto/intro?reference-code=" + encodeURIComponent(ref) +
+    "&name=" + encodeURIComponent(nm === "—" ? "" : nm) +
+    "&email=" + encodeURIComponent(em === "—" ? "" : em);
+</script>
+</body>
+</html>
